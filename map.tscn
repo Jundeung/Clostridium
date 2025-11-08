@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdh7cv372ncxt"]
+
+[ext_resource type="PackedScene" uid="uid://dyfh360m3eppk" path="res://bot.tscn" id="1_8gw1f"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1opmg"]
+vertices = PackedVector2Array(34.75, 34.75, 927.75, 34.75, 103.297, 296.563, 34.75, 614.211, 103.203, 347.313, 930.172, 613.438)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2, 4), PackedInt32Array(3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1152, 0, 138, 322, 1151, 648, 0, 649, 0, 0)])
+agent_radius = 48.0
+
+[node name="Map" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_1opmg")
+
+[node name="Bot" parent="NavigationRegion2D" instance=ExtResource("1_8gw1f")]
+position = Vector2(437, 156)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(1153, 2, 145, 321, 1151, 644)

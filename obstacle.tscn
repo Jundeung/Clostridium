@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxt0745113j43"]
+
+[ext_resource type="Texture2D" uid="uid://c8dto0hfu8c2j" path="res://icon.svg" id="1_lu5r8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyfi1"]
+size = Vector2(124, 123)
+
+[node name="Obstacle" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vyfi1")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+vertices = PackedVector2Array(-64, -63, 64, -63, 64, 64, -64, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lu5r8")
